@@ -1,23 +1,26 @@
-/*9. Crea una página web que haciendo uso de eos permita arrastrar una imagen
-    haciendo uso del ratón (al pulsar sobre la imagen la voy arrastrando hasta que suelto
-    el botón).
- 10. Mejora el ejercicio anterior para que se pueda hacer en una página con un número
-    cualquiera de imágenes.*/
+window.onload = () => { moverImagenes() }
 
-window.onload=()=>{arrastrar()}
+function moverImagenes() {
+    let clicked;
+    let imagenes = document.getElementsByTagName("img");
+    for (let i = 0; i < imagenes.length; i++) {
+        imagenes[i].style.position = "absolute";
+        imagenes[i].addEventListener("mousedown", (e) => {
+            clicked = true
+            e.target.addEventListener("mouseup", () => {
+                clicked = false;
+            });
+            pict = e.target;
+            e.target.style.top = e.clientY - e.target.offsetHeight / 2 + "px";
+            e.target.style.left = e.clientX - e.target.offsetWidth / 2 + "px";
+        });
+        document.addEventListener("mousemove", (f) => {
+            if (clicked) {
+                pict.style.left = f.clientX - pict.offsetWidth / 2 + "px";
+                pict.style.top = f.clientY - pict.offsetHeight / 2 + "px";
+            }
+        });
 
-function mo
-function arrastrar(){
-img = document.getElementsByTagName('img')
-
-img.addEventElement('mousedown',(e)=>{
-    e.target.style.position = 'absolute';
-    e.target.style.left = e.pageX - e.target.offsetWidth / 2 + 'px';
-    e.target.style.top = e.pageY - e.target.offsetHeight / 2 + 'px';
-
-    document.addEventListener('mousemove', (e)=>{
-        moveAt(e.pageX, e.pageY);
-      }
-    )
-})
+    }
 }
+
