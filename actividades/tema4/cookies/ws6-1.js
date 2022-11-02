@@ -52,8 +52,11 @@ nombre = document.getElementById("nombre");
 enviar = document.getElementById("enviar");
 aumentar = document.getElementById("masgrande");
 decrecer = document.getElementById("maspqueña");
-      if (getCookie("nombre") != "")
+    if (getCookie("nombre") != "")
         nombre.setAttribute("value", getCookie("nombre"));
+    if (getCookie("tamano") != "")
+        document.body.style.fontSize = getCookie("tamano") + "px";
+
 
     enviar.addEventListener("click", ()=>{
     setCookie("nombre", nombre.value, 60);});
@@ -69,5 +72,17 @@ decrecer = document.getElementById("maspqueña");
           document.body.style.backgroundColor = color;
         }
 
+        aumentar.addEventListener("click", ()=>{
+          let tam = parseInt(document.body.style.fontSize);
+          tam += 5;
+          document.body.style.fontSize = tam + "px";
+          setCookie("tamano", tam, 60);
+        });
+        decrecer.addEventListener("click", ()=>{
+          let tam = parseInt(document.body.style.fontSize);
+          tam -= 5;
+          document.body.style.fontSize = tam + "px";
+          setCookie("tamano", tam, 60);
+        });
    
   }
