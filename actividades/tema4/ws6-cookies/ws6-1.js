@@ -46,12 +46,27 @@ function fondoAzul(){
     document.body.style.backgroundColor = "blue";
   }
 
+function increaseFontSize(){
+    let parrafos = document.querySelector("body");
+        let style = window.getComputedStyle(parrafos, null).getPropertyValue('font-size');
+        let fontSize = parseFloat(style); 
+        parrafos.style.fontSize = (fontSize+1) + 'px';
+    }
+
+function decreaseFontSize(){
+    let parrafos = document.querySelector("body");
+        let style = window.getComputedStyle(parrafos, null).getPropertyValue('font-size');
+        let fontSize = parseFloat(style);
+        parrafos.style.fontSize = (fontSize-1) + 'px';
+    }
+
+
   window.onload = ()=>{
 //preguntar por el nombre de usuario
 nombre = document.getElementById("nombre");
 enviar = document.getElementById("enviar");
 aumentar = document.getElementById("masgrande");
-decrecer = document.getElementById("maspqueña");
+decrecer = document.getElementById("maspequeña");
     if (getCookie("nombre") != "")
         nombre.setAttribute("value", getCookie("nombre"));
     if (getCookie("tamano") != "")
@@ -72,17 +87,7 @@ decrecer = document.getElementById("maspqueña");
           document.body.style.backgroundColor = color;
         }
 
-        aumentar.addEventListener("click", ()=>{
-          let tam = parseInt(document.body.style.fontSize);
-          tam += 5;
-          document.body.style.fontSize = tam + "px";
-          setCookie("tamano", tam, 60);
-        });
-        decrecer.addEventListener("click", ()=>{
-          let tam = parseInt(document.body.style.fontSize);
-          tam -= 5;
-          document.body.style.fontSize = tam + "px";
-          setCookie("tamano", tam, 60);
-        });
+        aumentar.addEventListener("click",increaseFontSize);
+        decrecer.addEventListener("click",decreaseFontSize);
    
   }
