@@ -2,8 +2,11 @@
 //document.addEventListener('click', ()=>{alert("pulsa h1")});
 
 //Captura el movimiento del raton para que se muestre la posicion en la que se encuentra en cada momento
-
 //document.addEventListener('pointermove', (e)=>{console.log(e.clientX, e.clientY)});
+
+//Haciendo uso del evento onLoad, muestra el tiempo transcurrido desde la carga de la página.
+//window.onload = () => {setInterval(() => {console.log("Tiempo transcurrido: " + new Date().getSeconds() + " segundos")}, 1000)};
+
 
 /*4. Eventos onMouseMove y onLoad. Debemos ser capaces de dibujar con nuestro ratón
 en dos colores diferentes. Para ello primero simularemos que disponemos de un
