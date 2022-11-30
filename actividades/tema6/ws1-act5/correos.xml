@@ -1,0 +1,17 @@
+<correos>
+<correo>
+<nombre>Pepe</nombre>
+<email>pepe@gmail.com</email>
+<texto>Esto es un texto</texto>
+</correo>
+<correo>
+<nombre>Jose</nombre>
+<email>jose@gmail.com</email>
+<texto>Esto es un texto 2</texto>
+</correo>
+<correo>
+<nombre>Julia</nombre>
+<email>julia@gmail.com</email>
+<texto>Esto es un texto 3</texto>
+</correo>
+</correos>

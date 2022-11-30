@@ -15,7 +15,7 @@ canvas gráfico: realmente se tratará de una tabla con celdas de pequeño tama�
 (onLoad). Lo siguiente será detectar el movimiento del ratón sobre las celdas para
 pintarlas de un color, el cual será rojo si se mantiene pulsada simultaneamente la
 tecla Ctrl y azul si se pulsa Shift. En otro caso no deberá pintarse nada.*/
-/*Añade las siguientes funcionalidades al ejercicio anterior:
+/*5. Añade las siguientes funcionalidades al ejercicio anterior:
 Borrado de lineas con el ratón (mediante la pulsación del botón que tú decidas)          
 Borrar por completo el canvas (con un botón).*/
 
