@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button :disabled="permitirEntrada" @click="cambiarVisibilidad">Ver Entradas</button>
+        <div v-for="entrada in entradas" :id="entrada.id">
+            <h2>{{entrada.titulo}}</h2>
+            <p v-if="verEntrada">{{entrada.texto}}</p>
+            <p v-else>Pulsa boton para ver más información</p> 
+            <a v-bind:href="entrada.url">Más info</a>
+        </div>
+        <h3>Actualmente tenemos {{muestraNumeroEntradas()}} articulos</h3>
+        <h3>En este blog hay {{ entradasDeEspana }} articulos de España</h3>
+    </div>
+<script src="code.js"></script>
+</body>
+</html>
